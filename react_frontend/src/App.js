@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import axios from 'axios'
 
 function App() {
+  const [newUser, setNewUser] = useState({ email: '', password: '', password_confirmation: '' })
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    axios.post('http://localhost:3001/users', { user: newUser })
+      .then(response => {
+        console.log('Sign Up successful', response)
+      })
+      .catch(error => {
+        console.log('Sign up error', error)
+      })
+  }
+
+  const handleOnChange = (e) => {
+    setNewUser({ ...newUser, [e.target.name]: e.target.value })
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <form onSubmit={handleSubmit}>
+        <h3>Sign up</h3>
+        <label>Enter your email</label><br />
+        <input type="email" name="email" onChange={handleOnChange} /><br />
+        <label>Enter your password</label><br />
+        <input type="password" name="password" onChange={handleOnChange} /><br />
+        <label>Confirm your password</label> <br />
+        <input type="password" name="password_confirmation" onChange={handleOnChange} /><br />
+        <button type="submit">Sign Up</button>
+      </form>
     </div>
   );
 }
