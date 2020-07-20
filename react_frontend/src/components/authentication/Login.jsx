@@ -1,22 +1,27 @@
 import React, { useState } from 'react';
 import axios from 'axios'
 
-function Login() {
+function Login(props) {
   const [user, setUser] = useState({ email: '', password: '' })
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     axios.post('http://localhost:3001/sessions', { user: user }, { withCredentials: true })
       .then(response => {
-        console.log('Sign Up successful', response)
+        console.log('Log In successful', response)
+        this.props.history.push('/home')
       })
       .catch(error => {
-        console.log('Sign up error', error)
+        console.log('Log In error', error)
       })
   }
 
   const handleOnChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value })
   }
+  
+  console.log(props)
+  
   return (
     <div>
       <form onSubmit={handleSubmit}>
