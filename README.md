@@ -1,8 +1,10 @@
-This is another fullstack take on Acebook - the new facebook. 
+This is another fullstack take on Acebook - my version of Facebook
 
 I am using decoupled React and Rails. I am planning on implementing as many of the features as I can. 
 
-Users can: 
+In this repo you can find some wireframes that I drew up before this project was started, as well as user stories, the rails backend server, the React frontend views, and a little bit of information on how I built it and how you can run it. 
+
+User stories:
 
 - Sign up with email and password
 - Make status'
@@ -10,29 +12,33 @@ Users can:
 - Add friends
 - Comment on friends posts 
 - Like friends posts
-- Join groups 
+- Join groups
+- Message each other
+- Message in groups 
+- Have control over their profile
+ 
 
-to run this app 
+## Usage 
 
-first clone this repo
+First, clone this repo
 
 ```
-$ git clone [thisrepo]
+$ git clone [thisrepourl]
 ```
 
-Then cd into rails backend and install dependencies
+Then cd into rails backend, install dependencies, set up database and start on port 3001. For use, I have placed some dummy users in the database already. 
+
 ```
 $ cd rails_backend
 $ bundle install
-```
-
-Then start on port 3001 
-```
 $ rails s -p 3001
 ```
 
 Then cd into react frontend and start the server
+
 ```
 $ cd ../react_frontend
 $ npm start
 ```
+
+Use example@example.com and Password1 to log into a fully equipped profile to see the extent of the project.
