@@ -25,7 +25,7 @@ const LoadPosts = () => {
     <div>
       {posts === null ? null : posts.map(post => {
         return (
-          <div>{post.content}</div>
+          <div key={post.id}>{post.content}</div>
         )
       })}
     </div>

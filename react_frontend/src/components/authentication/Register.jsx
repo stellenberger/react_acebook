@@ -3,9 +3,11 @@ import axios from 'axios'
 
 function Register() {
   const [newUser, setNewUser] = useState({ email: '', password: '', password_confirmation: '' })
+  const url = process.env.REACT_APP_URL
+  
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:3001/users', { user: newUser })
+    axios.post(url + '/users', { user: newUser })
       .then(response => {
         console.log('Sign Up successful', response)
       })

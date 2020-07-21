@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   BrowserRouter, 
   Route,
@@ -10,12 +10,25 @@ import Home from './components/home/Home'
 import './App.css';
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState(null)
+  const handleLogin = (data) => {
+    console.log('hello from inside app component, handleLogin function', data)
+    setLoggedInUser(data.data.user)
+  }
+
   
   return (
     <BrowserRouter>
       <div className="App">
         <Switch>
-          <Route exact path='/' component={Landing} />
+          <Route exact path='/' render={props => (
+                <Landing {...props}
+                  handleLogin={handleLogin}
+                  // handleLogout={this.handleLogout}
+                  // loggedInStatus={this.state.loggedInStatus}
+                />
+                )}
+                />
           <Route exact path='/signup' component={Register} />
           <Route exact path='/home' component={Home} />
         </Switch>

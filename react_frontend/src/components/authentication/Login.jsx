@@ -8,8 +8,14 @@ function Login({props}) {
     event.preventDefault();
     axios.post('http://localhost:3001/sessions', { user: user }, { withCredentials: true })
       .then(response => {
-        console.log('Log In successful', response)
-        props.history.push('/home')
+        console.log(response.data.data.status)
+        if (response.data.data.status === 'CONFIRMED') {
+          console.log('Log In successful', response)
+          props.handleLogin(response.data)
+          props.history.push('/home')
+        } else {
+          console.log('Credentials invalid', response.data)
+        }
       })
       .catch(error => {
         console.log('Log In error', error)
@@ -19,8 +25,6 @@ function Login({props}) {
   const handleOnChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value })
   }
-  
-  console.log('this is the login component props',props)
   
   return (
     <div>

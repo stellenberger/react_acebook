@@ -8,6 +8,7 @@ const Landing = (props) => {
   return (
     <div>
       This is the landing page
+      <button onClick={props.handleLogin}>Click me!</button>
       <Register />
       <Login props={props}/>
     </div>
