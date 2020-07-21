@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
   BrowserRouter, 
   Route,
   Switch,
 } from 'react-router-dom'
 import Register from './components/authentication/Register'
-import Login from './components/authentication/Login'
+import Landing from './components/landing/Landing'
 import './App.css';
-import axios from 'axios'
 
 function App() {
   
@@ -15,7 +14,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Switch>
-          <Route exact path='/' component={Login} />
+          <Route exact path='/' component={Landing} />
           <Route exact path='/signup' component={Register} />
         </Switch>
       </div>

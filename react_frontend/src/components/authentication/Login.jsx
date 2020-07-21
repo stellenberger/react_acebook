@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios'
 
-function Login(props) {
+function Login({props}) {
   const [user, setUser] = useState({ email: '', password: '' })
   
   const handleSubmit = (event) => {
@@ -9,7 +9,7 @@ function Login(props) {
     axios.post('http://localhost:3001/sessions', { user: user }, { withCredentials: true })
       .then(response => {
         console.log('Log In successful', response)
-        this.props.history.push('/home')
+        props.history.push('/home')
       })
       .catch(error => {
         console.log('Log In error', error)
@@ -20,7 +20,7 @@ function Login(props) {
     setUser({ ...user, [e.target.name]: e.target.value })
   }
   
-  console.log(props)
+  console.log('this is the login component props',props)
   
   return (
     <div>
