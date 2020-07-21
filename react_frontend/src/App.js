@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 import Register from './components/authentication/Register'
 import Landing from './components/landing/Landing'
+import Home from './components/home/Home'
 import './App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={Landing} />
           <Route exact path='/signup' component={Register} />
+          <Route exact path='/home' component={Home} />
         </Switch>
       </div>
     </BrowserRouter>
