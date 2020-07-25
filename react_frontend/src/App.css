@@ -37,18 +37,3 @@
   }
 }
 
-.homepage-devider {
-  display: flex;
-}
-
-.home-left-section {
-  width: 30%;
-}
-
-.home-right-section {
-  width: 30%;
-}
-
-.home-middle-section {
-  width: 40%;
-}

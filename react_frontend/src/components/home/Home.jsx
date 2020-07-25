@@ -1,7 +1,6 @@
 import React from 'react'
-import LeftSection from './homeSections/LeftSection'
-import MiddleSection from './homeSections/MiddleSection'
-import RightSection from './homeSections/RightSection'
+import { LeftSection, MiddleSection, RightSection } from '../index'
+import './Home.scss'
 
 const Home = () => {
   return (

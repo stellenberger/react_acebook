@@ -4,7 +4,7 @@ import {
   Route,
   Switch,
 } from 'react-router-dom'
-import {Register, Landing, Home} from './components/index'
+import {Register, Landing, Home, LoggedOutNavBar, LoggedInNavBar} from './components/index'
 import './App.css';
 import axios from 'axios'
 function App() {
@@ -36,6 +36,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        {loggedInUser ? <LoggedInNavBar /> : <LoggedOutNavBar />}
         <Switch>
           <Route exact path='/' render={props => (
                 <Landing {...props}
