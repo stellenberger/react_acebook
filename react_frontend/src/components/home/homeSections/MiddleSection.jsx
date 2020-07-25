@@ -26,7 +26,7 @@ const MiddleSection = () => {
   return (
     <div className='home-middle-section'>
       I am the middle section and you will see all the posts here
-      <WritePost />
+      <WritePost retrievePosts={retrievePosts} />
       <LoadPosts posts={posts}/>
     </div>
   )

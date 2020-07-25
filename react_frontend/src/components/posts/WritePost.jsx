@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-const WritePost = () => {
+const WritePost = ({retrievePosts}) => {
   const [post, setPost] = useState({content: '', user_id: 1})
   const url = process.env.REACT_APP_URL
   
@@ -15,6 +15,7 @@ const WritePost = () => {
       .then(response => {
         console.log('post successfully created', response)
         setPost({ ...post, content: ''})
+        retrievePosts()
       })
       .catch(error => {
         console.log('error processing post request',error)
