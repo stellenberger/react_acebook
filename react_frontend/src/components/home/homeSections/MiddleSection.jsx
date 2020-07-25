@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import WritePost from '../../posts/WritePost'
 import LoadPosts from '../../posts/LoadPosts'
+import { StatusCard } from '../../index'
 import './Sections.scss'
 
 const MiddleSection = () => {
@@ -26,8 +26,7 @@ const MiddleSection = () => {
 
   return (
     <div className='home-middle-section-container'>
-      I am the middle section and you will see all the posts here
-      <WritePost retrievePosts={retrievePosts} />
+      <StatusCard retrievePosts={retrievePosts}/>
       <LoadPosts posts={posts}/>
     </div>
   )

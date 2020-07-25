@@ -1,0 +1,23 @@
+.status-card-container {
+  margin: auto;
+  box-shadow: 0px 0px 2px 0px;
+  background-color: white;
+  justify-content: left;
+  width: 600px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.status-box-and-profile-picture {
+  display: flex;
+  margin: 0px 0px 12px;
+  padding: 12px 16px 0px;
+  img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  input {
+    margin: 0 12px 
+  }
+}

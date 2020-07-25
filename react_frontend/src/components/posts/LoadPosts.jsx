@@ -1,11 +1,12 @@
 import React from 'react'
+import { PostCard } from '../index.jsx'
 
 const LoadPosts = ({posts}) => {
   return (
     <div>
       {posts && posts.map(post => {
         return (
-          <div key={post.id}>{post.content}</div>
+          <PostCard post={post}/>
         )
       })}
     </div>

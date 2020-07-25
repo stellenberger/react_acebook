@@ -5,7 +5,6 @@ import {
   Switch,
 } from 'react-router-dom'
 import {Register, Landing, Home, LoggedOutNavBar, LoggedInNavBar} from './components/index'
-import './App.css';
 import axios from 'axios'
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null)
