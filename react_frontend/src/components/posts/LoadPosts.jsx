@@ -1,29 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React from 'react'
 
-const LoadPosts = () => {
-  const [posts, setPosts] = useState(null)
-
-  const url = process.env.REACT_APP_URL
-
-  useEffect(() => {
-    retrievePosts()
-  }, [])
-
-  const retrievePosts = () => {
-    axios.get(url + '/posts', { withCredentials: true })
-      .then(response => {
-        console.log('posts successfully retrieved', response)
-        setPosts(response.data)
-      })
-      .catch(error => {
-        console.log('there was an error retrieving the posts', error)
-      })
-  }
-
+const LoadPosts = ({posts}) => {
   return (
     <div>
-      {posts === null ? null : posts.map(post => {
+      {posts && posts.map(post => {
         return (
           <div key={post.id}>{post.content}</div>
         )

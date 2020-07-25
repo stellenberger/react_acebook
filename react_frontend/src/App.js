@@ -4,9 +4,7 @@ import {
   Route,
   Switch,
 } from 'react-router-dom'
-import Register from './components/authentication/Register'
-import Landing from './components/landing/Landing'
-import Home from './components/home/Home'
+import {Register, Landing, Home} from './components/index'
 import './App.css';
 import axios from 'axios'
 function App() {
