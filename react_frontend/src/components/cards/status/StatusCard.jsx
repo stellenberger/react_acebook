@@ -9,6 +9,17 @@ const StatusCard = ({retrievePosts}) => {
         <img src="https://cioday.com/wp-content/uploads/2018/11/avatar-placeholder.png" alt="" className='profile-picture'/>
         <WritePost retrievePosts={retrievePosts} />
       </div>
+      <div className="upload-links">
+        <div className='link'>
+          <h4>Photo/Video</h4>
+        </div>
+        <div className='link'>
+          <h4>Tag Friends</h4>
+        </div>
+        <div className='link'>
+          <h4>Felling/Activity</h4>
+        </div>
+      </div>
     </div>
   )
 }
